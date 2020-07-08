@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "ivekhov_brain_games"
-version = "0.1.1"
+version = "0.1.2"
 description = ""
 authors = ["Your Name <you@example.com>"]
 packages = [
@@ -13,6 +13,8 @@ python = "^3.6"
 prompt = "^0.4.1"
 
 [tool.poetry.dev-dependencies]
+isort = "4.3.5"
+wemake-python-styleguide = "^0.14.0"
 
 [tool.poetry.scripts]
 brain-games = "brain_games.scripts.brain_games:main"
