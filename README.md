@@ -10,4 +10,4 @@ GitHub Actions:
 ![CI](https://github.com/ivekhov/python-project-lvl1/workflows/CI/badge.svg?branch=master)
 
 asciinema:
-https://asciinema.org/a/hJJg7VLxFLCKi81eTyvjQiwqC
+[![asciicast](https://asciinema.org/a/hJJg7VLxFLCKi81eTyvjQiwqC)
