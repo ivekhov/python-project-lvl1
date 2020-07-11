@@ -3,10 +3,15 @@
 """Make intro to game, ask user`s name greet user."""
 
 
-def make_intro():
-    """Welcome and say rules of game."""
-    print('\nWelcome to the Brain Games!')
-    print('Answer "yes" if number even otherwise answer "no".')
+def make_intro(*args):
+    """
+    Welcome and say rules of game.
+
+    Args:
+        *args: phrases for welcome speech.
+    """
+    for phrase in args:
+        print(phrase)
 
 
 def greet_user(name):
@@ -46,3 +51,9 @@ def error_message(an, cr, name):
 def say_correct():
     """Say 'correct', if answer is right."""
     print('Correct!')
+
+
+def make_intro_calc():
+    """Make intro to Brain-calc game."""
+    print('\nWelcome to the Brain Games!')
+    print('What is the result of the expression?')

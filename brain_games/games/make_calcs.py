@@ -3,10 +3,12 @@
 """Work with numbers in game."""
 
 
-from random import randint
+from random import choice, randint
+
+from brain_games.games import constants
 
 
-def call_random(start=1, stop=256) -> int:
+def call_random(start=constants.RANDOM_FROM, stop=constants.RANDOM_TO) -> int:
     """
     Return (pseudo)random integer.
 
@@ -63,3 +65,36 @@ def correct_answer(number) -> str:
     if is_even(number):
         return 'yes'
     return 'no'
+
+
+def call_operator(operators=constants.OPERATORS) -> str:
+    """
+    Return randomly selected operator.
+
+    Args:
+        operators: set of possible values. Default is 4-elems set (constants).
+
+    Returns:
+        str: operator selected from set.
+    """
+    return choice(operators)        # noqa: S311
+
+
+def answer_calc(first_item, second_item, operator) -> int:
+    """
+    Return answer on arithmetical expression.
+
+    Args:
+        first_item: integer.
+        second_item: integer.
+        operator: str.
+
+    Returns:
+        int: result of expression.
+    """
+    if operator == '+':
+        return first_item + second_item
+    elif operator == '-':
+        return first_item - second_item
+    elif operator == '*':
+        return first_item * second_item

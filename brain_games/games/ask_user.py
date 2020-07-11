@@ -35,3 +35,15 @@ def get_answer() -> str:
         str.
     """
     return prompt.string(prompt='Your answer: ')
+
+
+def ask_question_calc(first_item, second_item, operator):
+    """
+    Suggest an expression for calculation.
+
+    Args:
+        first_item: int (pseudo) random integer generated.
+        second_item: int (pseudo) random integer generated.
+        operator: str (pseudo) random selected from list of operators.
+    """
+    print('Question: {0} {1} {2}'.format(first_item, operator, second_item))
