@@ -8,3 +8,5 @@ This is study package "Brain Games" made on Hexlet Project #1 in Python Programm
 
 asciinema recordings:
 brain-even: https://asciinema.org/a/hJJg7VLxFLCKi81eTyvjQiwqC
+
+brain-cals:https://asciinema.org/a/QVNPLCtuhRSmWtQSsIjiCoGkK
