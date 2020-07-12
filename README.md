@@ -7,6 +7,9 @@ python-package "Brain Games" (study only)
 This is study package "Brain Games" made on Hexlet Project #1 in Python Programmer profession.
 
 asciinema recordings:
+
 brain-even: https://asciinema.org/a/hJJg7VLxFLCKi81eTyvjQiwqC
 
-brain-cals:https://asciinema.org/a/QVNPLCtuhRSmWtQSsIjiCoGkK
+brain-cals: https://asciinema.org/a/QVNPLCtuhRSmWtQSsIjiCoGkK
+
+brain-gcd: https://asciinema.org/a/wcqJKfMf2BdL3X78UrLGV5Idj
