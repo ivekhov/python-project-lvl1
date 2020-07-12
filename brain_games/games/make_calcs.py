@@ -3,6 +3,7 @@
 """Work with numbers in game."""
 
 
+from math import gcd
 from random import choice, randint
 
 from brain_games.games import constants
@@ -98,3 +99,17 @@ def answer_calc(first_item, second_item, operator) -> int:
         return first_item - second_item
     elif operator == '*':
         return first_item * second_item
+
+
+def answer_gcd(first_item, second_item) -> int:
+    """
+    Return answer on arithmetical expression.
+
+    Args:
+        first_item: integer.
+        second_item: integer.
+
+    Returns:
+        int: result of greatest common divider.
+    """
+    return gcd(first_item, second_item)

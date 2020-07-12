@@ -47,3 +47,24 @@ def ask_question_calc(first_item, second_item, operator):
         operator: str (pseudo) random selected from list of operators.
     """
     print('Question: {0} {1} {2}'.format(first_item, operator, second_item))
+
+
+def ask_question_gcd(first_item, second_item):
+    """
+    Suggest an expression for gcd.
+
+    Args:
+        first_item: int (pseudo) random integer generated.
+        second_item: int (pseudo) random integer generated.
+    """
+    print('Question: {0} {1}'.format(first_item, second_item))
+
+
+def get_answer_int() -> int:
+    """
+    Get answer and return integer.
+
+    Returns:
+        int.
+    """
+    return prompt.integer(prompt='Your answer: ')
