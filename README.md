@@ -13,3 +13,7 @@ brain-even: https://asciinema.org/a/hJJg7VLxFLCKi81eTyvjQiwqC
 brain-cals: https://asciinema.org/a/QVNPLCtuhRSmWtQSsIjiCoGkK
 
 brain-gcd: https://asciinema.org/a/wcqJKfMf2BdL3X78UrLGV5Idj
+
+brain-progression: https://asciinema.org/a/e5OiZpYWLicOOixoRMj5tlmu1
+
+
