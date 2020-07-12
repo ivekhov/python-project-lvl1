@@ -68,3 +68,17 @@ def get_answer_int() -> int:
         int.
     """
     return prompt.integer(prompt='Your answer: ')
+
+
+def ask_question_progression(progression, hidden_position):
+    """
+    Suggest an expression for arithmetical progression.
+
+    Args:
+        progression: list of numbers.
+        hidden_position: index of element that should be hidden to user.
+    """
+    temp = progression
+    temp[hidden_position] = '..'
+    print('Question:', end=' ')
+    print(*temp)

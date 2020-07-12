@@ -3,6 +3,7 @@
 """Work with numbers in game."""
 
 
+from itertools import count
 from math import gcd
 from random import choice, randint
 
@@ -113,3 +114,19 @@ def answer_gcd(first_item, second_item) -> int:
         int: result of greatest common divider.
     """
     return gcd(first_item, second_item)
+
+
+def call_progression(start, step, length=constants.PROGRESSION_LENGTH) -> list:
+    """
+    Return list of integers.
+
+    Args:
+        start: first item in range
+        step: last item in range
+        length: count of integers in this list
+
+    Returns:
+        list: of integers
+    """
+    numbers = count(start=start, step=step)
+    return list(next(numbers) for _ in range(length))       # noqa: C400
