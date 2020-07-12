@@ -130,3 +130,21 @@ def call_progression(start, step, length=constants.PROGRESSION_LENGTH) -> list:
     """
     numbers = count(start=start, step=step)
     return list(next(numbers) for _ in range(length))       # noqa: C400
+
+
+def is_prime(number) -> str:
+    """
+    Return 'yes' or 'no', if number is prime.
+
+    Args:
+        number: integer.
+
+    Returns:
+        str: 'yes' if number is prime, 'no' if not.
+    """
+    start = 2
+    while start < number:
+        if number % start == 0:
+            return 'no'
+        start += 1
+    return 'yes'

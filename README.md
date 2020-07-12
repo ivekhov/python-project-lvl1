@@ -8,12 +8,12 @@ This is study package "Brain Games" made on Hexlet Project #1 in Python Programm
 
 asciinema recordings:
 
-brain-even: https://asciinema.org/a/hJJg7VLxFLCKi81eTyvjQiwqC
+brain-even(step #5): https://asciinema.org/a/hJJg7VLxFLCKi81eTyvjQiwqC
 
-brain-cals: https://asciinema.org/a/QVNPLCtuhRSmWtQSsIjiCoGkK
+brain-cals(step #6): https://asciinema.org/a/QVNPLCtuhRSmWtQSsIjiCoGkK
 
-brain-gcd: https://asciinema.org/a/wcqJKfMf2BdL3X78UrLGV5Idj
+brain-gcd(step #7): https://asciinema.org/a/wcqJKfMf2BdL3X78UrLGV5Idj
 
-brain-progression: https://asciinema.org/a/e5OiZpYWLicOOixoRMj5tlmu1
+brain-progression(step #8): https://asciinema.org/a/e5OiZpYWLicOOixoRMj5tlmu1
 
-
+brain-prime(step #9): https://asciinema.org/a/x0OwsKo0KmvP875Fbk03ZHV7x
