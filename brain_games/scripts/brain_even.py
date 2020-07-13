@@ -17,11 +17,11 @@ def main():
         number = make_calcs.call_random()
         ask_user.ask_question(number)
         answer = ask_user.get_answer()
-        if make_calcs.is_even(number) is make_calcs.is_answer_even(answer):
+        correct = make_calcs.is_even(number)
+        if answer == correct:
             say_to_user.say_correct()
             counter = counter - 1
         else:
-            correct = make_calcs.correct_answer(number)
             say_to_user.error_message(answer, correct, user_name)
             break
         if counter == 0:
