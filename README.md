@@ -17,3 +17,5 @@ brain-gcd(step #7): https://asciinema.org/a/wcqJKfMf2BdL3X78UrLGV5Idj
 brain-progression(step #8): https://asciinema.org/a/e5OiZpYWLicOOixoRMj5tlmu1
 
 brain-prime(step #9): https://asciinema.org/a/x0OwsKo0KmvP875Fbk03ZHV7x
+
+[![asciicast](https://asciinema.org/a/14.png)](https://asciinema.org/a/x0OwsKo0KmvP875Fbk03ZHV7x)
