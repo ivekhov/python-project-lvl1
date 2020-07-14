@@ -5,7 +5,7 @@
 
 def make_intro(*args):
     """
-    Welcome and say rules of game.
+    Say welcome and rules of game.
 
     Args:
         *args: phrases for welcome speech.
@@ -51,9 +51,3 @@ def error_message(an, cr, name):
 def say_correct():
     """Say 'correct', if answer is right."""
     print('Correct!')
-
-
-def make_intro_calc():
-    """Make intro to Brain-calc game."""
-    print('\nWelcome to the Brain Games!')
-    print('What is the result of the expression?')
