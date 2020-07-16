@@ -9,7 +9,7 @@ from brain_games.games import calc
 
 def main():
     """Call brain-calc funstion with game logic."""
-    calc.start_game()
+    calc.game()
 
 
 if __name__ == '__main__':

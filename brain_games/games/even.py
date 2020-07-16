@@ -1,27 +1,11 @@
 # -*- coding:utf-8 -*-
 
-"""Logic of brain-even game."""
-
-from brain_games.functions import ask_user, make_calcs, say_to_user
+"""Game of brain-even."""
 
 
-def start_game():
-    """Call functions according to game logic."""
-    say_to_user.make_intro(make_calcs.WELCOME, make_calcs.GREET_TO_EVEN)
-    user_name = ask_user.ask_name()
-    say_to_user.greet_user(user_name)
-    counter = make_calcs.ATTEMPTS
-    while counter > 0:
-        number = make_calcs.call_random()
-        ask_user.ask_question(number)
-        answer = ask_user.get_answer()
-        correct = make_calcs.is_even(number)
-        correct = make_calcs.convert_bool_to_str(correct)
-        if answer == correct:
-            say_to_user.say_correct()
-            counter = counter - 1
-        else:
-            say_to_user.error_message(answer, correct, user_name)
-            break
-        if counter == 0:
-            say_to_user.congratulate_user(user_name)
+from brain_games import engine as en
+
+
+def game():
+    """Create even game logic."""
+    en.game(en.GREET_TO_EVEN, en.call_random, en.answer_even, 'string')

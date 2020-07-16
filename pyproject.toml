@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "ivekhov_brain_games"
-version = "0.1.14"
+version = "0.1.15"
 description = "Study package made on Hexlet Project #1 in Python programmer profession with simple games in CLI."
 authors = ["Ivan Vekhov <ivekhov@gmail.com>"]
 packages = [
