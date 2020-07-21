@@ -9,7 +9,7 @@ from brain_games.games import gcd
 
 def main():
     """Call functions according to general logic."""
-    gcd.game()
+    gcd.main()
 
 
 if __name__ == '__main__':
