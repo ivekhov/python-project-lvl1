@@ -8,7 +8,7 @@ from brain_games.games import calc
 
 
 def main():
-    """Call brain-calc funstion with game logic."""
+    """Call brain-calc function with game logic."""
     calc.game()
 
 
