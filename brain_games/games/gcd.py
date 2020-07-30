@@ -7,7 +7,30 @@ import prompt
 
 from brain_games import engine
 
-GREET = 'Find the greatest common divisor of given numbers.'
+QUESTION = 'Find the greatest common divisor of given numbers.'
+
+
+def find_gcd(first, second) -> int:
+    """
+    Find greatest common dividet of two given numbers.
+
+    Args:
+        first: int.
+        second: int.
+
+    Returns:
+        int: gcd of two numbers.
+    """
+    if first > second:
+        large, small = first, second
+    else:
+        large, small = second, first
+    residual = large % small
+    while residual != 0:
+        large = small
+        small = residual
+        residual = large % small
+    return small
 
 
 def get_question_and_answer() -> (int, int):
@@ -19,19 +42,12 @@ def get_question_and_answer() -> (int, int):
         int: correct answer.
     """
     numbers = [engine.call_random(), engine.call_random()]
-    large = max(numbers)
-    small = min(numbers)
-    residual = large % small
-    while residual != 0:
-        large = small
-        small = residual
-        residual = large % small
-    correct = small
+    correct = find_gcd(numbers[0], numbers[1])
     print('Question: {0} {1}'.format(numbers[0], numbers[1]))
     answer = prompt.integer(prompt='Your answer: ')
     return answer, correct
 
 
-def main():
+def start_game():
     """Create gcd game logic."""
-    engine.play_game(GREET, get_question_and_answer)
+    engine.play_game(QUESTION, get_question_and_answer)

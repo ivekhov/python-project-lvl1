@@ -3,3 +3,6 @@ __pycache__
 dist/
 *.pyc
 .venv/
+*.txt
+.vscode/
+brain_games/__deprecated/

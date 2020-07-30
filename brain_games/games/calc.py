@@ -2,11 +2,13 @@
 
 """Game of brain-calc."""
 
+import operator
+
 import prompt
 
 from brain_games import engine
 
-GREET = 'What is the result of the expression?'
+QUESTION = 'What is the result of the expression?'
 
 
 def get_question_and_answer() -> (int, int):
@@ -18,20 +20,20 @@ def get_question_and_answer() -> (int, int):
         int: correct answer.
     """
     first_item = engine.call_random()
-    operator = engine.call_operator()
+    operation = engine.call_operator()
     second_item = engine.call_random()
-    if operator == '+':
-        correct = first_item + second_item
-    elif operator == '-':
-        correct = first_item - second_item
-    elif operator == '*':
-        correct = first_item * second_item
+    if operation == '+':
+        correct = operator.add(first_item, second_item)
+    elif operation == '-':
+        correct = operator.substract(first_item, second_item)
+    elif operation == '*':
+        correct = operator.mul(first_item, second_item)
 
-    print('Question: {0} {1} {2}'.format(first_item, operator, second_item))
+    print('Question: {0} {1} {2}'.format(first_item, operation, second_item))
     answer = prompt.integer(prompt='Your answer: ')
     return answer, correct
 
 
-def main():
+def start_game():
     """Create calcs game logic."""
-    engine.play_game(GREET, get_question_and_answer)
+    engine.play_game(QUESTION, get_question_and_answer)

@@ -9,7 +9,7 @@ from brain_games.games import prime
 
 def main():
     """Call functions according to general logic."""
-    prime.main()
+    prime.start_game()
 
 
 if __name__ == '__main__':

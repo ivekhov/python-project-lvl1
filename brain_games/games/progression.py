@@ -9,11 +9,11 @@ import prompt
 
 from brain_games import engine
 
-GREET = 'What number is missing in the progression?'
+QUESTION = 'What number is missing in the progression?'
 PROGRESSION_LENGTH = 10
 
 
-def call_progression(start, step, length=PROGRESSION_LENGTH) -> list:
+def make_progression(start, step, length=PROGRESSION_LENGTH) -> list:
     """
     Return list of integers for progression expression.
 
@@ -42,7 +42,7 @@ def create_task_prog() -> list:
     start = engine.call_random(1, 10)
     step = engine.call_random(1, 10)
     hidden_position = engine.call_random(0, 9)
-    progression = call_progression(start, step)
+    progression = make_progression(start, step)
     return [progression, hidden_position, progression[hidden_position]]
 
 
@@ -64,6 +64,6 @@ def get_question_and_answer() -> (int, int):
     return answer, correct
 
 
-def main():
+def start_game():
     """Create progression game logic."""
-    engine.play_game(GREET, get_question_and_answer)
+    engine.play_game(QUESTION, get_question_and_answer)
