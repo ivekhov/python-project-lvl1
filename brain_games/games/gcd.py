@@ -4,8 +4,6 @@
 
 import random
 
-import prompt
-
 from brain_games import engine
 
 QUESTION = 'Find the greatest common divisor of given numbers.'
@@ -36,19 +34,20 @@ def find_gcd(first, second) -> int:
     return small
 
 
-def get_question_and_answer() -> (int, int):
+def get_question_and_answer() -> (str, str):
     """
     Get answer from user and calculate correct answer.
 
     Returns:
-        int: user`s answer.
-        int: correct answer.
+        str: question for user.
+        str: correct answer.
     """
-    numbers = [random.randint(RANDOM_FROM, RANDOM_TO), random.randint(RANDOM_FROM, RANDOM_TO)]      # noqa: S311, E501
-    correct = find_gcd(numbers[0], numbers[1])
-    print('Question: {0} {1}'.format(numbers[0], numbers[1]))
-    answer = prompt.integer(prompt='Your answer: ')
-    return answer, correct
+    first = random.randint(RANDOM_FROM, RANDOM_TO)       # noqa: S311
+    second = random.randint(RANDOM_FROM, RANDOM_TO)      # noqa: S311
+    correct = find_gcd(first, second)
+    answer = str(correct)
+    question = ' '.join(['Question:', str(first), str(second)])
+    return question, answer
 
 
 def start_game():

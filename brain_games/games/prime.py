@@ -4,8 +4,6 @@
 
 import random
 
-import prompt
-
 from brain_games import engine
 
 QUESTION = 'Answer "yes" if given number is prime. Otherwise answer "no".'
@@ -53,15 +51,14 @@ def get_question_and_answer() -> (str, str):
     Get answer from user and calculate correct answer.
 
     Returns:
-        str: user`s answer.
+        str: question for user.
         str: correct answer.
     """
     number = random.randint(RANDOM_FROM, RANDOM_TO)     # noqa: S311
     correct = is_prime(number)
-    correct = convert_bool_to_str(correct)
-    print('Question: {0}'.format(number))
-    answer = prompt.string(prompt='Your answer: ')
-    return answer, correct
+    answer = convert_bool_to_str(correct)
+    question = ' '.join(['Question:', str(number)])
+    return question, answer
 
 
 def start_game():

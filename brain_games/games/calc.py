@@ -5,8 +5,6 @@
 import operator
 import random
 
-import prompt
-
 from brain_games import engine
 
 QUESTION = 'What is the result of the expression?'
@@ -28,27 +26,26 @@ def call_operator(operators=OPERATORS) -> str:
     return random.choice(operators)        # noqa: S311
 
 
-def get_question_and_answer() -> (int, int):
+def get_question_and_answer() -> (str, str):
     """
     Get answer from user and calculate correct answer.
 
     Returns:
-        int: user`s answer.
-        int: correct answer.
+        str: question for user.
+        str: correct answer.
     """
-    first_item = random.randint(RANDOM_FROM, RANDOM_TO)     # noqa: S311
+    first = random.randint(RANDOM_FROM, RANDOM_TO)     # noqa: S311
     operation = call_operator()
-    second_item = random.randint(RANDOM_FROM, RANDOM_TO)    # noqa: S311
+    second = random.randint(RANDOM_FROM, RANDOM_TO)    # noqa: S311
     if operation == '+':
-        correct = operator.add(first_item, second_item)
+        correct = operator.add(first, second)
     elif operation == '-':
-        correct = operator.substract(first_item, second_item)
+        correct = operator.substract(first, second)
     elif operation == '*':
-        correct = operator.mul(first_item, second_item)
-
-    print('Question: {0} {1} {2}'.format(first_item, operation, second_item))
-    answer = prompt.integer(prompt='Your answer: ')
-    return answer, correct
+        correct = operator.mul(first, second)
+    answer = str(correct)
+    question = ' '.join(['Question:', str(first), operation, str(second)])
+    return question, answer
 
 
 def start_game():

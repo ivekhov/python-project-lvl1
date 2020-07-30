@@ -6,8 +6,6 @@
 import itertools
 import random
 
-import prompt
-
 from brain_games import engine
 
 QUESTION = 'What number is missing in the progression?'
@@ -30,13 +28,13 @@ def make_progression(start, step, length=PROGRESSION_LENGTH) -> list:
     return list(next(numbers) for _ in range(length))       # noqa: C400
 
 
-def get_question_and_answer() -> (int, int):
+def get_question_and_answer() -> (str, str):
     """
     Get answer from user and calculate correct answer.
 
     Returns:
-        int: user`s answer.
-        int: correct answer.
+        str: question for user.
+        str: correct answer.
     """
     start = random.randint(1, PROGRESSION_LENGTH)   # noqa: S311
     step = random.randint(1, PROGRESSION_LENGTH)    # noqa: S311
@@ -44,12 +42,12 @@ def get_question_and_answer() -> (int, int):
     progression = make_progression(start, step)
     task = [progression, hidden_position, progression[hidden_position]]
     correct = task[2]
+    answer = str(correct)
     temp = task[0]
     temp[task[1]] = '..'
-    print('Question:', end=' ')
-    print(*temp)
-    answer = prompt.integer(prompt='Your answer: ')
-    return answer, correct
+    row_progr = ' '.join([str(num) for num in temp])
+    question = ' '.join(['Question:', row_progr])
+    return question, answer
 
 
 def start_game():

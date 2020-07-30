@@ -46,7 +46,9 @@ def play_game(greet, get_question_and_answer):
     print('Hello, {0}!\n'.format(user_name))
     counter = ATTEMPTS
     while counter > 0:
-        answer, correct = get_question_and_answer()
+        question, correct = get_question_and_answer()
+        print(question)
+        answer = prompt.string(prompt='Your answer: ')
         if answer == correct:
             print('Correct!')
             counter = counter - 1
