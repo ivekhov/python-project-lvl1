@@ -29,23 +29,6 @@ def make_progression(start, step, length=PROGRESSION_LENGTH) -> list:
     return list(next(numbers) for _ in range(length))       # noqa: C400
 
 
-def create_task_prog() -> list:
-    """
-    Create components for progression task.
-
-    Returns:
-        list:
-            list with progression sequence,
-            index of hidden element,
-            hidden value (task for user).
-    """
-    start = engine.call_random(1, 10)
-    step = engine.call_random(1, 10)
-    hidden_position = engine.call_random(0, 9)
-    progression = make_progression(start, step)
-    return [progression, hidden_position, progression[hidden_position]]
-
-
 def get_question_and_answer() -> (int, int):
     """
     Get answer from user and calculate correct answer.
@@ -54,7 +37,11 @@ def get_question_and_answer() -> (int, int):
         int: user`s answer.
         int: correct answer.
     """
-    task = create_task_prog()
+    start = engine.call_random(1, PROGRESSION_LENGTH)
+    step = engine.call_random(1, PROGRESSION_LENGTH)
+    hidden_position = engine.call_random(0, PROGRESSION_LENGTH - 1)
+    progression = make_progression(start, step)
+    task = [progression, hidden_position, progression[hidden_position]]
     correct = task[2]
     temp = task[0]
     temp[task[1]] = '..'

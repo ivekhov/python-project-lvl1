@@ -20,9 +20,7 @@ def is_even(number) -> bool:
     Returns:
         bool: True is even, False is odd.
     """
-    if number % 2 == 0:
-        return True
-    return False
+    return not number % 2
 
 
 def convert_bool_to_str(answer) -> str:
