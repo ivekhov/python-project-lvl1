@@ -2,12 +2,15 @@
 
 """Game of brain-gcd."""
 
+import random
 
 import prompt
 
 from brain_games import engine
 
 QUESTION = 'Find the greatest common divisor of given numbers.'
+RANDOM_FROM = 1
+RANDOM_TO = 25
 
 
 def find_gcd(first, second) -> int:
@@ -41,7 +44,7 @@ def get_question_and_answer() -> (int, int):
         int: user`s answer.
         int: correct answer.
     """
-    numbers = [engine.call_random(), engine.call_random()]
+    numbers = [random.randint(RANDOM_FROM, RANDOM_TO), random.randint(RANDOM_FROM, RANDOM_TO)]      # noqa: S311, E501
     correct = find_gcd(numbers[0], numbers[1])
     print('Question: {0} {1}'.format(numbers[0], numbers[1]))
     answer = prompt.integer(prompt='Your answer: ')

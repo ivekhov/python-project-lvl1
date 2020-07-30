@@ -4,6 +4,7 @@
 
 
 import itertools
+import random
 
 import prompt
 
@@ -37,9 +38,9 @@ def get_question_and_answer() -> (int, int):
         int: user`s answer.
         int: correct answer.
     """
-    start = engine.call_random(1, PROGRESSION_LENGTH)
-    step = engine.call_random(1, PROGRESSION_LENGTH)
-    hidden_position = engine.call_random(0, PROGRESSION_LENGTH - 1)
+    start = random.randint(1, PROGRESSION_LENGTH)   # noqa: S311
+    step = random.randint(1, PROGRESSION_LENGTH)    # noqa: S311
+    hidden_position = random.randint(0, PROGRESSION_LENGTH - 1)     # noqa: S311
     progression = make_progression(start, step)
     task = [progression, hidden_position, progression[hidden_position]]
     correct = task[2]

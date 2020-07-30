@@ -3,12 +3,29 @@
 """Game of brain-calc."""
 
 import operator
+import random
 
 import prompt
 
 from brain_games import engine
 
 QUESTION = 'What is the result of the expression?'
+OPERATORS = ('+', '-', '*')
+RANDOM_FROM = 1
+RANDOM_TO = 25
+
+
+def call_operator(operators=OPERATORS) -> str:
+    """
+    Return randomly selected operator.
+
+    Args:
+        operators: set of possible values. Default is 4-elems set (constants).
+
+    Returns:
+        str: operator selected from set.
+    """
+    return random.choice(operators)        # noqa: S311
 
 
 def get_question_and_answer() -> (int, int):
@@ -19,9 +36,9 @@ def get_question_and_answer() -> (int, int):
         int: user`s answer.
         int: correct answer.
     """
-    first_item = engine.call_random()
-    operation = engine.call_operator()
-    second_item = engine.call_random()
+    first_item = random.randint(RANDOM_FROM, RANDOM_TO)     # noqa: S311
+    operation = call_operator()
+    second_item = random.randint(RANDOM_FROM, RANDOM_TO)    # noqa: S311
     if operation == '+':
         correct = operator.add(first_item, second_item)
     elif operation == '-':

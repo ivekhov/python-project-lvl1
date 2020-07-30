@@ -2,58 +2,10 @@
 
 """Contains functions and constants for building game logic."""
 
-
-import random
-
 import prompt
 
 ATTEMPTS = 3
-OPERATORS = ('+', '-', '*')
-RANDOM_FROM = 1
-RANDOM_TO = 25
 WELCOME = '\nWelcome to the Brain Games!'
-
-
-def call_random(start=RANDOM_FROM, stop=RANDOM_TO) -> int:
-    """
-    Return (pseudo)random integer.
-
-    Args:
-        start: first item in range, default is 1
-        stop: last item in range, default is 256
-
-    Returns:
-        int
-    """
-    return random.randint(start, stop)     # noqa: S311
-
-
-def call_operator(operators=OPERATORS) -> str:
-    """
-    Return randomly selected operator.
-
-    Args:
-        operators: set of possible values. Default is 4-elems set (constants).
-
-    Returns:
-        str: operator selected from set.
-    """
-    return random.choice(operators)        # noqa: S311
-
-
-def convert_bool_to_str(answer) -> str:
-    """
-    Convert True into 'yes', False into 'no'.
-
-    Args:
-        answer: bool.
-
-    Returns:
-        str: 'yes' or 'no'.
-    """
-    if answer is True:
-        return 'yes'
-    return 'no'
 
 
 def make_intro(*args):

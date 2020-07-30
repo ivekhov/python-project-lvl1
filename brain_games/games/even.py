@@ -2,12 +2,15 @@
 
 """Game of brain-even."""
 
+import random
 
 import prompt
 
 from brain_games import engine
 
 QUESTION = 'Answer "yes" if number even otherwise answer "no".'
+RANDOM_FROM = 1
+RANDOM_TO = 25
 
 
 def is_even(number) -> bool:
@@ -46,7 +49,7 @@ def get_question_and_answer() -> (str, str):
         str: user`s answer.
         str: correct answer.
     """
-    number = engine.call_random()
+    number = random.randint(RANDOM_FROM, RANDOM_TO)     # noqa: S311
     correct = is_even(number)
     correct = convert_bool_to_str(correct)
     print('Question: {0}'.format(number))
