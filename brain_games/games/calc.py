@@ -20,12 +20,12 @@ def get_question_and_answer() -> (str, str):
         str: correct answer.
     """
     first = random.randint(RANDOM_FROM, RANDOM_TO)     # noqa: S311
-    operation = random.choice(operators)
+    operation = random.choice(OPERATORS)
     second = random.randint(RANDOM_FROM, RANDOM_TO)    # noqa: S311
     if operation == '+':
         correct = operator.add(first, second)
     elif operation == '-':
-        correct = operator.substract(first, second)
+        correct = operator.sub(first, second)
     elif operation == '*':
         correct = operator.mul(first, second)
     question = ' '.join(['Question:', str(first), operation, str(second)])

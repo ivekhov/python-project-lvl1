@@ -5,18 +5,18 @@ import prompt
 ATTEMPTS = 3
 
 
-def make_intro(*args):
-    """
-    Say welcome and rules of game.
+# def make_intro(*args):
+#     """
+#     Say welcome and rules of game.
 
-    Args:
-        *args: phrases for welcome speech.
-    """
-    for phrase in args:
-        print(phrase)
+#     Args:
+#         *args: phrases for welcome speech.
+#     """
+#     for phrase in args:
+#         print(phrase)
 
 
-def play_game(get_question_and_answer):
+def play_game(QUESTION, get_question_and_answer):
     """
     Create boilerplate for game.
 
@@ -24,9 +24,10 @@ def play_game(get_question_and_answer):
         greet: welcome phrase per particuar game.
         get_question_and_answer: function.
     """
-    print('\nWelcome to the Brain Games!')
-    user_name = prompt.string(prompt='\nMay I have your name? ')
-    print('Hello, {}!'.format(user_name))
+    print('Welcome to the Brain Games!')
+    print(QUESTION)
+    name = prompt.string(prompt='\nMay I have your name? ')
+    print('Hello, {}!'.format(name))
     print()
     counter = ATTEMPTS
     while counter > 0:
@@ -37,8 +38,9 @@ def play_game(get_question_and_answer):
             print('Correct!')
             counter = counter - 1
         else:
-            print("'{0}' is wrong answer ;(. Correct answer was '{1}'.".format(an, cr))
+            print("'{}' is wrong answer ;(.".format(answer), end=' ')
+            print("Correct answer was {}".format(correct))
             print("Let's try again, {}!".format(name))
             break
         if counter == 0:
-            print('Congratulations, {0}!\n'.format(user_name))
+            print('Congratulations, {0}!\n'.format(name))

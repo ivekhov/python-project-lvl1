@@ -1,7 +1,6 @@
 """Game of brain-progression."""
 
 
-import itertools
 import random
 
 from brain_games import engine
