@@ -4,11 +4,12 @@
 
 
 from brain_games.games import even
+from brain_games import engine
 
 
 def main():
     """Call even game."""
-    even.start_game()
+    engine.play_game(even)
 
 
 if __name__ == '__main__':

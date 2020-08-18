@@ -2,9 +2,8 @@
 
 import random
 
-from brain_games import engine
 
-QUESTION = 'Answer "yes" if given number is prime. Otherwise answer "no".'
+DESCRIPTION = 'Answer "yes" if given number is prime. Otherwise answer "no".'
 RANDOM_FROM = 1
 RANDOM_TO = 25
 
@@ -39,10 +38,4 @@ def get_question_and_answer() -> (str, str):
     """
     number = random.randint(RANDOM_FROM, RANDOM_TO)     # noqa: S311
     answer = 'yes' if is_prime(number) else 'no'
-    question = ' '.join(['Question:', str(number)])
-    return question, answer
-
-
-def start_game():
-    """Realize prime game logic."""
-    engine.play_game(QUESTION, get_question_and_answer)
+    return str(number), answer

@@ -4,11 +4,12 @@
 
 
 from brain_games.games import gcd
+from brain_games import engine
 
 
 def main():
     """Call functions according to general logic."""
-    gcd.start_game()
+    engine.play_game(gcd)
 
 
 if __name__ == '__main__':

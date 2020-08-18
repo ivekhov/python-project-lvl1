@@ -4,11 +4,12 @@
 
 
 from brain_games.games import progression
+from brain_games import engine
 
 
 def main():
     """Call functions according to general logic."""
-    progression.start_game()
+    engine.play_game(progression)
 
 
 if __name__ == '__main__':

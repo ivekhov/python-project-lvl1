@@ -5,7 +5,7 @@ import random
 
 from brain_games import engine
 
-QUESTION = 'What is the result of the expression?'
+DESCRIPTION = 'What is the result of the expression?'
 OPERATORS = ('+', '-', '*')
 RANDOM_FROM = 1
 RANDOM_TO = 25
@@ -28,10 +28,10 @@ def get_question_and_answer() -> (str, str):
         correct = operator.sub(first, second)
     elif operation == '*':
         correct = operator.mul(first, second)
-    question = ' '.join(['Question:', str(first), operation, str(second)])
+    question = ' '.join([str(first), operation, str(second)])
     return question, str(correct)
 
 
 def start_game():
     """Create calcs game logic."""
-    engine.play_game(QUESTION, get_question_and_answer)
+    engine.play_game(DESCRIPTION, get_question_and_answer)

@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "ivekhov_brain_games"
-version = "0.1.19"
+version = "0.1.20"
 description = "Study package made on Hexlet Project #1 in Python programmer profession with simple games in CLI."
 authors = ["Ivan Vekhov <ivekhov@gmail.com>"]
 packages = [
@@ -18,8 +18,8 @@ python = "^3.6"
 prompt = "^0.4.1"
 
 [tool.poetry.dev-dependencies]
-isort = "4.3.5" 
-wemake-python-styleguide = "^0.14.0"
+isort = "4.3.5"
+flake8 = "^3.8"
 
 [tool.poetry.scripts]
 brain-even = "brain_games.scripts.brain_even:main"

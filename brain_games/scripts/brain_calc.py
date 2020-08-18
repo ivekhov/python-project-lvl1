@@ -4,11 +4,12 @@
 
 
 from brain_games.games import calc
+from brain_games import engine
 
 
 def main():
     """Call brain-calc function with game logic."""
-    calc.start_game()
+    engine.play_game(calc)
 
 
 if __name__ == '__main__':

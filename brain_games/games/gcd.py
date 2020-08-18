@@ -2,9 +2,8 @@
 
 import random
 
-from brain_games import engine
 
-QUESTION = 'Find the greatest common divisor of given numbers.'
+DESCRIPTION = 'Find the greatest common divisor of given numbers.'
 RANDOM_FROM = 1
 RANDOM_TO = 25
 
@@ -43,10 +42,5 @@ def get_question_and_answer() -> (str, str):
     first = random.randint(RANDOM_FROM, RANDOM_TO)       # noqa: S311
     second = random.randint(RANDOM_FROM, RANDOM_TO)      # noqa: S311
     correct = find_gcd(first, second)
-    question = ' '.join(['Question:', str(first), str(second)])
+    question = ' '.join([str(first), str(second)])
     return question, str(correct)
-
-
-def start_game():
-    """Create gcd game logic."""
-    engine.play_game(QUESTION, get_question_and_answer)
