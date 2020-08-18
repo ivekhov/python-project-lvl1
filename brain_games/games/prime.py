@@ -1,5 +1,3 @@
-# -*- coding:utf-8 -*-
-
 """Game of brain-prime."""
 
 import random
@@ -31,21 +29,6 @@ def is_prime(number) -> bool:
     return True
 
 
-def convert_bool_to_str(answer) -> str:
-    """
-    Convert True into 'yes', False into 'no'.
-
-    Args:
-        answer: bool.
-
-    Returns:
-        str: 'yes' or 'no'.
-    """
-    if answer is True:
-        return 'yes'
-    return 'no'
-
-
 def get_question_and_answer() -> (str, str):
     """
     Get answer from user and calculate correct answer.
@@ -55,8 +38,7 @@ def get_question_and_answer() -> (str, str):
         str: correct answer.
     """
     number = random.randint(RANDOM_FROM, RANDOM_TO)     # noqa: S311
-    correct = is_prime(number)
-    answer = convert_bool_to_str(correct)
+    answer = 'yes' if is_prime(number) else 'no'
     question = ' '.join(['Question:', str(number)])
     return question, answer
 

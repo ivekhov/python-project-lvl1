@@ -1,6 +1,7 @@
 python-package "Brain Games" (study only)
 ----
-[![Maintainability](https://api.codeclimate.com/v1/badges/a99a88d28ad37a79dbf6/maintainability)](https://codeclimate.com/github/codeclimate/codeclimate/maintainability)
+
+[![Maintainability](https://api.codeclimate.com/v1/badges/cb3c0c8f1e7c1d9ae86b/maintainability)](https://codeclimate.com/github/ivekhov/python-project-lvl1/maintainability)
 
 ![Python CI](https://github.com/ivekhov/python-project-lvl1/workflows/Python%20CI/badge.svg)
 

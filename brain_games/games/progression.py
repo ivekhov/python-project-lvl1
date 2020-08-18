@@ -1,5 +1,3 @@
-# -*- coding:utf-8 -*-
-
 """Game of brain-progression."""
 
 
@@ -10,22 +8,6 @@ from brain_games import engine
 
 QUESTION = 'What number is missing in the progression?'
 PROGRESSION_LENGTH = 10
-
-
-def make_progression(start, step, length=PROGRESSION_LENGTH) -> list:
-    """
-    Return list of integers for progression expression.
-
-    Args:
-        start: first item in range.
-        step: last item in range.
-        length: count of integers in this list.
-
-    Returns:
-        list: three integer values.
-    """
-    numbers = itertools.count(start=start, step=step)
-    return list(next(numbers) for _ in range(length))       # noqa: C400
 
 
 def get_question_and_answer() -> (str, str):
@@ -39,14 +21,10 @@ def get_question_and_answer() -> (str, str):
     start = random.randint(1, PROGRESSION_LENGTH)   # noqa: S311
     step = random.randint(1, PROGRESSION_LENGTH)    # noqa: S311
     hidden_position = random.randint(0, PROGRESSION_LENGTH - 1)     # noqa: S311
-    progression = make_progression(start, step)
-    task = [progression, hidden_position, progression[hidden_position]]
-    correct = task[2]
-    answer = str(correct)
-    temp = task[0]
-    temp[task[1]] = '..'
-    row_progr = ' '.join([str(num) for num in temp])
-    question = ' '.join(['Question:', row_progr])
+    progression = [start + i * step for i in range(PROGRESSION_LENGTH)]
+    answer = str(progression[start + step * hidden_position])
+    progression[hidden_position] = '...'
+    question = ' '.join(map(str, progression))
     return question, answer
 
 

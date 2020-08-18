@@ -1,5 +1,3 @@
-# -*- coding:utf-8 -*-
-
 """Game of brain-gcd."""
 
 import random
@@ -45,9 +43,8 @@ def get_question_and_answer() -> (str, str):
     first = random.randint(RANDOM_FROM, RANDOM_TO)       # noqa: S311
     second = random.randint(RANDOM_FROM, RANDOM_TO)      # noqa: S311
     correct = find_gcd(first, second)
-    answer = str(correct)
     question = ' '.join(['Question:', str(first), str(second)])
-    return question, answer
+    return question, str(correct)
 
 
 def start_game():
