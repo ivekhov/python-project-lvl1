@@ -3,7 +3,6 @@
 import operator
 import random
 
-from brain_games import engine
 
 DESCRIPTION = 'What is the result of the expression?'
 OPERATORS = ('+', '-', '*')
@@ -19,9 +18,9 @@ def get_question_and_answer() -> (str, str):
         str: question for user.
         str: correct answer.
     """
-    first = random.randint(RANDOM_FROM, RANDOM_TO)     # noqa: S311
+    first = random.randint(RANDOM_FROM, RANDOM_TO)
     operation = random.choice(OPERATORS)
-    second = random.randint(RANDOM_FROM, RANDOM_TO)    # noqa: S311
+    second = random.randint(RANDOM_FROM, RANDOM_TO)
     if operation == '+':
         correct = operator.add(first, second)
     elif operation == '-':
@@ -30,8 +29,3 @@ def get_question_and_answer() -> (str, str):
         correct = operator.mul(first, second)
     question = ' '.join([str(first), operation, str(second)])
     return question, str(correct)
-
-
-def start_game():
-    """Create calcs game logic."""
-    engine.play_game(DESCRIPTION, get_question_and_answer)

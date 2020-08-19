@@ -32,4 +32,4 @@ def play_game(game):
             print("Let's try again, {}!".format(name))
             break
         if counter == 0:
-            print('Congratulations, {0}!\n'.format(name))
+            print('Congratulations, {}!\n'.format(name))
