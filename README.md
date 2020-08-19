@@ -24,3 +24,67 @@ brain-progression(step #8):
 
 brain-prime(step #9):
 [![asciicast](https://asciinema.org/a/x0OwsKo0KmvP875Fbk03ZHV7x.svg)](https://asciinema.org/a/x0OwsKo0KmvP875Fbk03ZHV7x)
+
+-----
+Poetry (just4memory).
+
+**Создание окружения для разработки.**
+
+* Инициализировать проект
+```
+poetry new project_name
+```
+* Добавить пакет в проект
+```
+poetry add package_name
+```
+* Установка зависимостей ([poetry basics](https://python-poetry.org/docs/basic-usage/) and [commands](https://python-poetry.org/docs/cli/))
+```
+poetry update
+poetry install
+```
+
+* Тесты
+```
+make test
+```
+* Проверка кода линтером flake8:
+```
+make lint
+```
+* Установка репозитория:
+```
+poetry config repositories.testPyPi https://test.pypi.org/legacy
+```
+* Установка доступа к репозиторию:
+```
+poetry config http-basic.{login}_brain_games {login} {password}
+```
+* Сборка пакета:
+```
+poetry create package_name (в первый раз)
+poetry build
+```
+* Публикация пакета:
+```
+poetry publish --repository testPyPi
+```
+* Загрузка опубликованного пакета: 
+```
+pip install --index-url https://test.pypi.org/simple/
+poetry install (второй вариант обновления в локальной системе)
+```
+* Вызов функции из корня пакета
+```
+poetry run python -m brain_games.scripts.brain-even
+poetry run brain-even (второй вариант вызова)
+brain-even (при наличии шебанга)
+```
+* Запуск проверки стиля кода: 
+```
+poetry run flake8 brain_games
+```
+* Cделать аскинему ([about](https://asciinema.org/docs/how-it-works))
+```
+asciinema rec
+```
