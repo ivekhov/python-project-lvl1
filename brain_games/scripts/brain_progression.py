@@ -9,7 +9,7 @@ from brain_games import engine
 
 def main():
     """Call functions according to general logic."""
-    engine.play_game(progression)
+    engine.play(progression)
 
 
 if __name__ == '__main__':

@@ -9,7 +9,7 @@ from brain_games import engine
 
 def main():
     """Call even game."""
-    engine.play_game(even)
+    engine.play(even)
 
 
 if __name__ == '__main__':

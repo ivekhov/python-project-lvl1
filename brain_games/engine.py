@@ -2,10 +2,10 @@
 
 import prompt
 
-ATTEMPTS = 3
+ATTEMPT_COUNTS = 3
 
 
-def play_game(game):
+def play(game):
     """
     Create boilerplate for game.
 
@@ -17,16 +17,15 @@ def play_game(game):
     name = prompt.string(prompt='\nMay I have your name? ')
     print('Hello, {}!'.format(name))
     print()
-    for attempt in range(0, ATTEMPTS):
+    for _ in range(0, ATTEMPT_COUNTS):
         question, correct = game.get_question_and_answer()
         print('Question: {}'.format(question))
         answer = prompt.string(prompt='Your answer: ')
-        if answer == correct:
-            print('Correct!')
-        else:
+        if answer != correct:
             print("'{}' is wrong answer ;(.".format(answer), end=' ')
             print("Correct answer was {}".format(correct))
             print("Let's try again, {}!".format(name))
-            break
-        if attempt == 2:
-            print('Congratulations, {}!\n'.format(name))
+            return
+        else:
+            print('Correct!')
+        print('Congratulations, {}!\n'.format(name))

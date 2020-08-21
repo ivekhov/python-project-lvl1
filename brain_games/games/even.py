@@ -16,6 +16,6 @@ def get_question_and_answer() -> (str, str):
         str: question for user.
         str: correct answer.
     """
-    number = random.randint(RANDOM_FROM, RANDOM_TO)     # noqa: S311
+    number = random.randint(RANDOM_FROM, RANDOM_TO)
     answer = 'yes' if number % 2 == 0 else 'no'
     return number, answer
