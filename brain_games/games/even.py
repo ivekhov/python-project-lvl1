@@ -18,4 +18,4 @@ def get_question_and_answer() -> (str, str):
     """
     question = random.randint(RANDOM_FROM, RANDOM_TO)
     correct = 'yes' if question % 2 == 0 else 'no'
-    return question, correct
+    return str(question), correct
