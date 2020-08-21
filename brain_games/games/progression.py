@@ -20,7 +20,7 @@ def get_question_and_answer() -> (str, str):
     step = random.randint(1, PROGRESSION_LENGTH)    # noqa: S311
     hidden_position = random.randint(0, PROGRESSION_LENGTH - 1)     # noqa: S311
     progression = [start + i * step for i in range(PROGRESSION_LENGTH)]
-    answer = str(start + step * hidden_position)
+    correct = str(start + step * hidden_position)
     progression[hidden_position] = '...'
     question = ' '.join(map(str, progression))
-    return question, answer
+    return question, correct

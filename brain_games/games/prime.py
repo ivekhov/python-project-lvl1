@@ -36,6 +36,6 @@ def get_question_and_answer() -> (str, str):
         str: question for user.
         str: correct answer.
     """
-    number = random.randint(RANDOM_FROM, RANDOM_TO)     # noqa: S311
-    answer = 'yes' if is_prime(number) else 'no'
-    return number, answer
+    question = random.randint(RANDOM_FROM, RANDOM_TO)     # noqa: S311
+    correct = 'yes' if is_prime(question) else 'no'
+    return str(question), correct

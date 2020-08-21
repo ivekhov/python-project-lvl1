@@ -28,4 +28,4 @@ def play(game):
             return
         else:
             print('Correct!')
-        print('Congratulations, {}!\n'.format(name))
+    print('Congratulations, {}!\n'.format(name))
